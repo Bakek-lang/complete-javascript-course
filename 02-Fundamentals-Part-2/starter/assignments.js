@@ -49,3 +49,84 @@ const percentSweden3 = percentageOfWorld3(7);
 const percentSpain3 = percentageOfWorld3(48);
 
 console.log(percentNorway3, percentSweden3, percentSpain3);
+
+//  4. LECTURE: Functions Calling Other Functions
+
+let describePopulation = function (country, population) {
+  return `${country} has ${population} million people, which is about ${percentageOfWorld1(
+    population
+  )}% of the world.`;
+};
+
+describePopulation("Norway", 4);
+describePopulation("Sweden", 7);
+describePopulation("Spain", 48);
+
+console.log(describePopulation("Norway", 4));
+
+//  5. LECTURE: Introduction to Arrays
+
+const populations = [4, 7, 48, 1441];
+
+console.log(populations.length === 4 ? true : false);
+
+const percentages = [
+  percentageOfWorld1(populations[0]),
+  percentageOfWorld1(populations[1]),
+  percentageOfWorld1(populations[2]),
+  percentageOfWorld1(populations[3]),
+];
+
+console.log(percentages);
+
+//  6. LECTURE: Basic Array Operations (Methods)
+
+const neighbours = ["France", "Portugal", "Morocco"];
+
+neighbours.push("Utopia");
+
+console.log(neighbours);
+
+neighbours.pop([3]);
+
+console.log(neighbours);
+
+if (
+  neighbours[0] === "Germany" ||
+  neighbours[1] === "Germany" ||
+  neighbours[2] === "Germany"
+) {
+  console.log("Probably a central European country :D");
+} else {
+  console.log("Proably not a central European country :D");
+}
+
+neighbours[0] = "Republic of France";
+
+console.log(neighbours);
+
+//  7. LECTURE: Introduction to Objects
+
+let myCountry = {
+  country: "Norway",
+  capital: "Oslo",
+  language: "Norwegian",
+  population: 4,
+  neighbours: ["Sweden", "Finland", "Russia"],
+};
+
+//  8. LECTURE: Dot vs. Bracket Notation
+
+console.log(
+  `${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking people, 3 neighbouring countries and a capital called ${myCountry.capital}.`
+);
+
+myCountry.population += 2;
+
+console.log(myCountry.population);
+
+myCountry["population"] -= 2;
+
+console.log(myCountry.population);
+
+//  9. LECTURE: Object Methods
