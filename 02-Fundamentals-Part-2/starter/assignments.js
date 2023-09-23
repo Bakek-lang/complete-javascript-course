@@ -66,18 +66,18 @@ console.log(describePopulation("Norway", 4));
 
 //  5. LECTURE: Introduction to Arrays
 
-const populations = [4, 7, 48, 1441];
+// const populations = [4, 7, 48, 1441];
 
-console.log(populations.length === 4 ? true : false);
+// console.log(populations.length === 4 ? true : false);
 
-const percentages = [
-  percentageOfWorld1(populations[0]),
-  percentageOfWorld1(populations[1]),
-  percentageOfWorld1(populations[2]),
-  percentageOfWorld1(populations[3]),
-];
+// const percentages = [
+//   percentageOfWorld1(populations[0]),
+//   percentageOfWorld1(populations[1]),
+//   percentageOfWorld1(populations[2]),
+//   percentageOfWorld1(populations[3]),
+// ];
 
-console.log(percentages);
+// console.log(percentages);
 
 //  6. LECTURE: Basic Array Operations (Methods)
 
@@ -155,3 +155,58 @@ console.log(myCountry);
 for (let i = 1; i <= 50; i++) {
   console.log(`Voter number ${[i]} is currently voting`);
 }
+
+//  11. LECTURE: Looping Arrays, Breaking and Continuing
+// This is from 5. LECTURE: Introduction to Arrays
+
+const populations = [4, 7, 48, 1441];
+
+console.log(populations.length === 4 ? true : false);
+
+const percentages = [
+  percentageOfWorld1(populations[0]),
+  percentageOfWorld1(populations[1]),
+  percentageOfWorld1(populations[2]),
+  percentageOfWorld1(populations[3]),
+];
+
+console.log(percentages);
+
+const percentages2 = [];
+
+// this is looping arrays
+
+for (let i = 0; i < populations.length; i++) {
+  percentages2.push(percentageOfWorld1(populations[i]));
+}
+
+console.log(percentages2);
+
+//  12. LECTURE: Looping Backwards and Loops in Loops
+
+let listOfNeighbours = [
+  ["Canada", "Mexico"],
+  ["Spain"],
+  ["Norway", "Sweden", "Russia"],
+];
+
+for (let i = 0; i < listOfNeighbours.length; i++) {
+  console.log(`Neighbour: ${listOfNeighbours[i][0]}`);
+  if (listOfNeighbours[i].length > 1) {
+    for (let j = 1; j < listOfNeighbours[i].length; j++) {
+      console.log(`Neighbour: ${listOfNeighbours[i][j]}`);
+    }
+  }
+}
+
+//  13. LECTURE: The while Loop
+
+const percentages3 = [];
+let count = 0;
+
+while (count < populations.length) {
+  percentages3.push(percentageOfWorld1(populations[count]));
+  count++;
+}
+
+console.log(percentages3);
