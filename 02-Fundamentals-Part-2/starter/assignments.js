@@ -113,6 +113,14 @@ let myCountry = {
   language: "Norwegian",
   population: 4,
   neighbours: ["Sweden", "Finland", "Russia"],
+  describe: function () {
+    console.log(
+      `${this.country} has ${this.population} million ${this.language}-speaking people, 3 neighbouring countries and a capital called ${this.capital}.`
+    );
+  },
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length === 0 ? true : false;
+  },
 };
 
 //  8. LECTURE: Dot vs. Bracket Notation
@@ -130,3 +138,20 @@ myCountry["population"] -= 2;
 console.log(myCountry.population);
 
 //  9. LECTURE: Object Methods
+
+myCountry.describe();
+
+//  the code in the object:
+// describe: function () {
+//   console.log(
+//     `${this.country} has ${this.population} million ${this.language}-speaking people, 3 neighbouring countries and a capital called ${this.capital}.`
+//   );
+
+myCountry.checkIsland();
+console.log(myCountry);
+
+//  10. LECTURE: Iteration: The for Loop
+
+for (let i = 1; i <= 50; i++) {
+  console.log(`Voter number ${[i]} is currently voting`);
+}
