@@ -9,7 +9,7 @@ const againButton = document.querySelector('.again');
 const body = document.querySelector('body');
 const bigNumber = document.querySelector('.number');
 let currentScore = 20;
-let randomNumber = Math.floor(Math.random() * 21);
+let randomNumber = Math.floor(Math.random() * 20) + 1;
 let highscoreNumber = 0;
 
 checkButton.addEventListener('click', function () {
